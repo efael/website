@@ -8,6 +8,7 @@ import { GooglePlayLink } from '@/components/GooglePlayLink'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
+import logoUzinfocom from '@/images/logos/uzinfocom.svg'
 import logoBbc from '@/images/logos/bbc.svg'
 import logoCbs from '@/images/logos/cbs.svg'
 import logoCnn from '@/images/logos/cnn.svg'
@@ -115,13 +116,6 @@ export function Hero() {
             <div className="mt-8 flex flex-wrap gap-x-4 gap-y-4">
               <AppStoreLink />
               <GooglePlayLink />
-              {/* <Button
-                href="https://play.google.com/store/apps/details?id=uz.uzinfocom.efael.app"
-                variant="outline"
-              >
-                <PlayIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2.5">Google Play Store</span>
-              </Button> */}
             </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
@@ -141,14 +135,7 @@ export function Hero() {
               className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-8 lg:mx-0 lg:justify-start"
             >
               {[
-                ['Forbes', logoForbes],
-                ['TechCrunch', logoTechcrunch],
-                ['Wired', logoWired],
-                ['CNN', logoCnn, 'hidden xl:block'],
-                ['BBC', logoBbc],
-                ['CBS', logoCbs],
-                ['Fast Company', logoFastCompany],
-                ['HuffPost', logoHuffpost, 'hidden xl:block'],
+                ['Uzinfocom', logoUzinfocom], // , 'hidden xl:block'
               ].map(([name, logo, className]) => (
                 <li key={name} className={clsx('flex', className)}>
                   <Image src={logo} alt={name} className="h-8" unoptimized />
