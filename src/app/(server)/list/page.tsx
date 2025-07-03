@@ -31,7 +31,7 @@ export default function Login() {
             </optgroup>
           </SelectField>
         </div>
-        <Button type="submit" color="cyan" className="mt-8 w-full">
+        <Button type="submit" color="gray" className="mt-8 w-full">
           Let's Go!
         </Button>
       </form>

@@ -13,7 +13,7 @@ export default function Home() {
       <PrimaryFeatures />
       <SecondaryFeatures />
       <CallToAction />
-      <Reviews />
+      {/* <Reviews /> */}
       <Faqs />
     </>
   )

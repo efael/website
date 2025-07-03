@@ -217,7 +217,7 @@ export function AppDemo() {
             <div className="mt-6 flex gap-4 text-xs text-gray-500">
               <div>1D</div>
               <div>5D</div>
-              <div className="font-semibold text-cyan-600">1M</div>
+              <div className="font-semibold text-gray-900">1M</div>
               <div>6M</div>
               <div>1Y</div>
               <div>5Y</div>

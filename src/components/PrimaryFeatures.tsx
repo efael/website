@@ -37,23 +37,23 @@ interface CustomAnimationProps {
 
 const features = [
   {
-    name: 'Invite friends for better returns',
+    name: 'Decentralized by Default',
     description:
-      'For every friend you invite to Pocket, you get insider notifications 5 seconds sooner. And it’s 10 seconds if you invite an insider.',
+      'Your conversations don’t belong on someone else’s server. With Matrix, your data stays on your terms — self-host, federate, or join trusted instances. No central authority. No vendor lock-in.',
     icon: DeviceUserIcon,
     screen: InviteScreen,
   },
   {
-    name: 'Notifications on stock dips',
+    name: 'End-to-End Encryption',
     description:
-      'Get a push notification every time we find out something that’s going to lower the share price on your holdings so you can sell before the information hits the public markets.',
+      'Messages, voice calls, video — all encrypted with the latest protocols like Olm and Megolm. Your communication stays private, whether you’re chatting one-on-one or collaborating in global rooms.',
     icon: DeviceNotificationIcon,
     screen: StocksScreen,
   },
   {
-    name: 'Invest what you want',
+    name: 'Power Features for Power Users',
     description:
-      'We hide your stock purchases behind thousands of anonymous trading accounts, so suspicious activity can never be traced back to you.',
+      'Threaded conversations, widgets, bots, VoIP, reactions, and more. Whether you’re running a hacker collective, a DAO, or a gaming guild — you’re covered.',
     icon: DeviceTouchIcon,
     screen: InvestScreen,
   },
@@ -185,9 +185,9 @@ const bodyAnimation: MotionProps = {
 
 type ScreenProps =
   | {
-      animated: true
-      custom: CustomAnimationProps
-    }
+    animated: true
+    custom: CustomAnimationProps
+  }
   | { animated?: false }
 
 function InviteScreen(props: ScreenProps) {
@@ -239,57 +239,65 @@ function StocksScreen(props: ScreenProps) {
         <div className="divide-y divide-gray-100">
           {[
             {
-              name: 'Laravel',
-              price: '4,098.01',
+              name: 'Junaid O\'Sullivan',
+              message: 'hello',
+              time: '12:17',
               change: '+4.98%',
               color: '#F9322C',
               logo: LaravelLogo,
             },
             {
-              name: 'Tuple',
-              price: '5,451.10',
+              name: 'Tim Cooked',
+              message: 'hello',
+              time: 'Yesterday',
               change: '-3.38%',
               color: '#5A67D8',
               logo: TupleLogo,
             },
             {
-              name: 'Transistor',
-              price: '4,098.41',
+              name: 'Mustafa Solomon',
+              message: 'hello',
+              time: 'Tuesday',
               change: '+6.25%',
               color: '#2A5B94',
               logo: TransistorLogo,
             },
             {
-              name: 'Diageo',
-              price: '250.65',
+              name: 'Ida Dale',
+              message: 'hello',
+              time: 'Tuesday',
               change: '+1.25%',
               color: '#3320A7',
               logo: DiageoLogo,
             },
             {
-              name: 'StaticKit',
-              price: '250.65',
+              name: 'Briony Luna',
+              message: 'hello',
+              time: 'Tuesday',
               change: '-3.38%',
               color: '#2A3034',
               logo: StaticKitLogo,
             },
             {
-              name: 'Statamic',
-              price: '5,040.85',
+              name: 'Tim Ferrell',
+              message: 'hello',
+              time: 'Tuesday',
               change: '-3.11%',
               color: '#0EA5E9',
               logo: StatamicLogo,
             },
             {
-              name: 'Mirage',
-              price: '140.44',
+              name: 'Jamil Morton',
+              message: 'hello',
+              time: 'Tuesday',
               change: '+9.09%',
               color: '#16A34A',
               logo: MirageLogo,
             },
             {
-              name: 'Reversable',
-              price: '550.60',
+              name: 'Callum Matthams',
+              message: 'hello',
+              time: 'Tuesday',
               change: '-1.25%',
               color: '#8D8D8D',
               logo: ReversableLogo,
@@ -302,12 +310,17 @@ function StocksScreen(props: ScreenProps) {
               >
                 <stock.logo className="h-10 w-10" />
               </div>
-              <div className="flex-auto text-sm text-gray-900">
-                {stock.name}
+              <div className="flex-auto text-sm">
+                <div className='text-gray-900'>
+                  {stock.name}
+                </div>
+                <div className='text-gray-500'>
+                  {stock.message}
+                </div>
               </div>
               <div className="flex-none text-right">
                 <div className="text-sm font-medium text-gray-900">
-                  {stock.price}
+                  {stock.time}
                 </div>
                 <div
                   className={clsx(
@@ -324,7 +337,7 @@ function StocksScreen(props: ScreenProps) {
           ))}
         </div>
       </MotionAppScreenBody>
-    </AppScreen>
+    </AppScreen >
   )
 }
 
@@ -577,13 +590,13 @@ export function PrimaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
           <h2 className="text-3xl font-medium tracking-tight text-white">
-            Every feature you need to win. Try it for yourself.
+            Everything you need for private, sovereign communication. Try it yourself.
           </h2>
           <p className="mt-2 text-lg text-gray-400">
-            Pocket was built for investors like you who play by their own rules
-            and aren’t going to let SEC regulations get in the way of their
-            dreams. If other investing tools are afraid to build it, Pocket has
-            it.
+            We designed this platform for communities, activists, developers, and
+            independent thinkers — people who don’t want to be tracked, monetized,
+            or censored. If other platforms compromise, we go the other way. If
+            privacy matters, we build it in.
           </p>
         </div>
       </Container>

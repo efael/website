@@ -3,53 +3,53 @@ import { Container } from '@/components/Container'
 const faqs = [
   [
     {
-      question: 'How do I know the tips are good?',
+      question: 'Is this really end-to-end encrypted?',
       answer:
-        'Our whole business depends on our tips being good, so it’s in our best interest that they are. The results of our customers speak for themselves, just trust us.',
+        'Yes. All messages, calls, and media are end-to-end encrypted by default using the Matrix protocol’s Olm and Megolm cryptographic libraries.',
     },
     {
-      question: 'Isn’t this insider trading?',
+      question: 'Is the platform centralized?',
       answer:
-        'Yes exactly. But at scale! Historically you could only make insider trades with knowledge from your direct network. Pocket brings you insider trading tips from people you don’t even know.',
+        'No. It’s fully decentralized. You can join an existing server or run your own. Federation means no single company owns your data or controls your experience.',
     },
     {
-      question: 'But isn’t insider trading illegal?',
+      question: 'Can I use it on all my devices?',
       answer:
-        'Here’s the thing: you’re the one doing the insider trading, not us. We’re just giving you the tips and some tools to make trades. We’re not doing anything wrong here.',
-    },
-  ],
-  [
-    {
-      question: 'Do the people giving you tips realize what they are doing?',
-      answer:
-        'Again I would argue this isn’t really our responsibility. People make their own choices. If they don’t research the consequences that’s on them, not on us.',
-    },
-    {
-      question: 'Where is Pocket based?',
-      answer:
-        'Let’s just say it’s not somewhere where the SEC is going to find us.',
-    },
-    {
-      question: 'Is there any age limit to trading on Pocket?',
-      answer:
-        'For our free plan, the age limit is based on the minimum age to trade in your country of residence. Our VIP plan uses advanced transaction anonymization though, so you can use that plan even if you’re 9 years old. Or a dog.',
+        'Absolutely. Our app works on iOS, Android, desktop, and web. Your conversations sync seamlessly across all your devices.',
     },
   ],
   [
     {
-      question: 'How did you get this on the App Store?',
+      question: 'Can I host my own server?',
       answer:
-        'Honestly we were surprised too, but eventually we found out that the app reviewer found the app so compelling they approved it just so they could use it themselves.',
+        'Yes — that’s one of the core strengths of Matrix. You can deploy your own homeserver using Synapse or Dendrite easily with Efael\'s provided infrastructure via NixOS, and manage your own identity server if desired.',
     },
     {
-      question: 'How do I explain the money I withdraw from Pocket to the IRS?',
+      question: 'Can I use it with other platforms?',
       answer:
-        'This feels like one-hundred percent a you problem. Pocket is not responsible in any way for your tax returns.',
+        'You can bridge Matrix with other tools like Slack, Discord, Telegram, IRC, and more. Our platform is open and interoperable.',
     },
     {
-      question: 'How do I become an insider?',
+      question: 'Does it support groups and voice/video calls?',
       answer:
-        'Contact us with some details about your industry and the type of access you have to apply for an insider account. Once approved, we’ll send you a guide on collecting insider information without being detected at work.',
+        'Yes. You can create public or private rooms, threads, and communities (Spaces), and start encrypted voice or video calls — one-on-one or in groups.',
+    },
+  ],
+  [
+    {
+      question: 'Is my data ever sold or tracked?',
+      answer:
+        'Never. Your data is encrypted and never shared or monetized. We don’t track usage behavior or embed third-party analytics.',
+    },
+    {
+      question: 'Is it open source?',
+      answer:
+        'Yes. Both the Matrix protocol and our client/infra are open source. You can inspect, audit, or contribute to the code.',
+    },
+    {
+      question: 'What’s the difference between Matrix and other messaging apps?',
+      answer:
+        'Unlike traditional messengers, Matrix is decentralized — there’s no central server controlling your conversations. It supports federation, so anyone can run their own server and still connect to others. Plus, everything is end-to-end encrypted, extensible, and open-source — no walled gardens, no surveillance capitalism.',
     },
   ],
 ]

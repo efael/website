@@ -4,39 +4,39 @@ import { Container } from '@/components/Container'
 
 const features = [
   {
-    name: 'Invest any amount',
+    name: 'Communicate without limits',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
+      'Whether you’re running a community of 5 or 50,000 — our platform scales with you. Your messages, your rooms, your control.',
     icon: DeviceArrowIcon,
   },
   {
-    name: 'Build a balanced portfolio',
+    name: 'Federated & future-proof',
     description:
-      'Invest in different industries to find the most opportunities to win huge.',
+      'Deploy your own server or join an existing one. Matrix federation lets your conversations span across organizations, countries, and platforms — no single point of failure.',
     icon: DeviceCardsIcon,
   },
   {
-    name: 'Trade in real-time',
+    name: 'Real-time sync across all devices',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      'Send, receive, and sync messages instantly across mobile, desktop, and web. Always secure, always encrypted.',
     icon: DeviceClockIcon,
   },
   {
-    name: 'Profit from your network',
+    name: 'Grow your trusted network',
     description:
-      'Invite new insiders to get tips faster and beat even other Pocket users.',
+      'Bring in teammates, friends, or collaborators. Use secure invites, verify with keys, and expand your ecosystem without compromising privacy.',
     icon: DeviceListIcon,
   },
   {
-    name: 'Encrypted and anonymized',
+    name: 'End-to-end encrypted and anonymized',
     description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
+      'Your conversations are protected by military-grade encryption. Not even we can see what you’re saying — and we don’t want to.',
     icon: DeviceLockIcon,
   },
   {
-    name: 'Portfolio tracking',
+    name: 'Intelligent activity dashboards',
     description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
+      'Track room engagement, message volume, server health, and federation links — without compromising on privacy. Insights that empower you.',
     icon: DeviceChartIcon,
   },
 ]
@@ -190,17 +190,16 @@ export function SecondaryFeatures() {
   return (
     <section
       id="secondary-features"
-      aria-label="Features for building a portfolio"
+      aria-label="Features for building a network"
       className="py-20 sm:py-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
+            Now is the time to build your network.
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+            In a world of centralized control and digital surveillance, creating a sovereign, secure communication space is no longer optional — it’s essential. Start building your private, encrypted network today.
           </p>
         </div>
         <ul

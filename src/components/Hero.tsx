@@ -48,8 +48,8 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
             y2="1025"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="#000000" />
+            <stop offset="1" stopColor="#000000" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -78,8 +78,8 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
             y2="913"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="#000000" />
+            <stop offset="1" stopColor="#000000" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -110,8 +110,9 @@ export function Hero() {
               Experience your own ether.
             </h1>
             <p className="mt-6 text-lg text-gray-600">
-              We build a universal social networking tool to do
-              build your business, foster your community
+              A privacy-first, decentralized social platform designed to
+              empower communities and protect your data — no ads, no
+              tracking, just secure communication.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-4 gap-y-4">
               <AppStoreLink />
