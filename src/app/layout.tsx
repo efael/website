@@ -1,14 +1,10 @@
 import { type Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-})
+const inter = localFont({ src: './Inter.ttf' })
 
 export const metadata: Metadata = {
   title: {
@@ -25,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={clsx('bg-gray-50 antialiased', inter.variable)}>
+    <html lang="en" className={clsx('bg-gray-50 antialiased', inter.className)}>
       <body>{children}</body>
     </html>
   )

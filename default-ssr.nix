@@ -36,10 +36,16 @@ in
       pkgs.typescript
     ];
 
+    preBuild = ''
+      cp "${
+        pkgs.google-fonts.override {fonts = ["Inter"];}
+      }/share/fonts/truetype/Inter[opsz,wght].ttf" ./src/app/Inter.ttf
+    '';
+
     buildPhase = ''
       # Set to standalone mode and properties
-      sed -i 's/output: "export",/output: "standalone",/' ./packages/docs/next.config.mjs
-      sed -i 's/unoptimized: true,/unoptimized: false,/' ./packages/docs/next.config.mjs
+      sed -i 's/output: "export",/output: "standalone",/' ./next.config.js
+      sed -i 's/unoptimized: true,/unoptimized: false,/' ./next.config.js
 
       # Build the package
       pnpm build
@@ -79,13 +85,13 @@ in
       pname = manifest.name;
       version = manifest.version;
       src = source;
-      hash = "sha256-2g8+3OTDaEkx0NvSxnUYyPQ1PEdRmc8xjc2qHMWJe+w=";
+      hash = "sha256-QNvNnGO7U1a8n9l0VYAiIgSe6oX3Vdx6F2wwTCSiwT4=";
     };
 
     meta = with pkgs.lib; {
-      homepage = "https://xinux.uz";
+      homepage = "https://efael.net";
       mainProgram = "${manifest.name}-start";
-      description = "Website of Xinux";
+      description = "Website of Efael";
       license = with licenses; [cc-by-40];
       platforms = with platforms; linux ++ darwin;
       maintainers = with maintainers; [orzklv];

@@ -4,6 +4,7 @@ import { Button } from '@/components/Button'
 import { SelectField } from '@/components/Fields'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
+import { useId } from 'react'
 
 
 export const metadata: Metadata = {
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
 const servers = ["efael.net", "efael.net", "floss.uz"]
 
 export default function Login() {
+  const id = useId();
+
   return (
     <AuthLayout
       title="Choose your home"
@@ -23,8 +26,8 @@ export default function Login() {
       }
     >
       {servers.map((s) => (
-        <Link href={`https://chat.${s}`}>
-          <Button color="gray" className="mt-2 w-full">
+        <Link key={id} href={`https://chat.${s}`}>
+          <Button key={id} color="gray" className="mt-2 w-full">
             {s}
           </Button>
         </Link>

@@ -36,3 +36,6 @@ next-env.d.ts
 
 # direnv
 .direnv
+
+# temporary fonts
+# src/app/Inter.ttf
