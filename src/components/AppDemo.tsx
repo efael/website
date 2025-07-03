@@ -63,28 +63,28 @@ function Chart({
       className={clsx(className, 'overflow-visible')}
       {...(interactionEnabled
         ? {
-            onPointerLeave: () => onChangeActivePointIndex(null),
-            onPointerMove: (event) => {
-              let x = event.nativeEvent.offsetX
-              let closestPointIndex: number | null = null
-              let closestDistance = Infinity
-              for (
-                let pointIndex = 0;
-                pointIndex < points.length;
-                pointIndex++
-              ) {
-                let point = points[pointIndex]
-                let distance = Math.abs(point.x - x)
-                if (distance < closestDistance) {
-                  closestDistance = distance
-                  closestPointIndex = pointIndex
-                } else {
-                  break
-                }
+          onPointerLeave: () => onChangeActivePointIndex(null),
+          onPointerMove: (event) => {
+            let x = event.nativeEvent.offsetX
+            let closestPointIndex: number | null = null
+            let closestDistance = Infinity
+            for (
+              let pointIndex = 0;
+              pointIndex < points.length;
+              pointIndex++
+            ) {
+              let point = points[pointIndex]
+              let distance = Math.abs(point.x - x)
+              if (distance < closestDistance) {
+                closestDistance = distance
+                closestPointIndex = pointIndex
+              } else {
+                break
               }
-              onChangeActivePointIndex(closestPointIndex)
-            },
-          }
+            }
+            onChangeActivePointIndex(closestPointIndex)
+          },
+        }
         : {})}
       {...props}
     >
@@ -175,14 +175,22 @@ export function AppDemo() {
     <AppScreen>
       <AppScreen.Body>
         <div className="p-4">
-          <div className="flex gap-2">
-            <div className="text-xs/6 text-gray-500">Tailwind Labs, Inc.</div>
-            <div className="text-sm text-gray-900">$CSS</div>
+          <div className="flex gap-20">
             <svg viewBox="0 0 24 24" className="ml-auto h-6 w-6" fill="none">
               <path
-                d="M5 12a7 7 0 1 1 14 0 7 7 0 0 1-14 0ZM12 9v6M15 12H9"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
                 stroke="#171717"
-                strokeWidth="2"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <div className="text-sm text-gray-900">Somebody</div>
+            <svg viewBox="0 0 24 24" className="ml-auto h-6 w-6" fill="none">
+              <path
+                d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"
+                stroke="#171717"
+                strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -201,9 +209,8 @@ export function AppDemo() {
                     percentageChange >= 0 ? 'text-cyan-500' : 'text-gray-500',
                   )}
                 >
-                  {`${
-                    percentageChange >= 0 ? '+' : ''
-                  }${percentageChange.toFixed(2)}%`}
+                  {`${percentageChange >= 0 ? '+' : ''
+                    }${percentageChange.toFixed(2)}%`}
                 </div>
               )}
             </div>

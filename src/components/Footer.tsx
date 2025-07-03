@@ -27,10 +27,10 @@ export function Footer() {
         <div className="flex flex-col items-start justify-between gap-y-12 pt-16 pb-6 lg:flex-row lg:items-center lg:py-16">
           <div>
             <div className="flex items-center text-gray-900">
-              <Logomark className="h-10 w-10 flex-none fill-cyan-500" />
+              <Logomark className="h-10 w-10 flex-none fill-gray-900" />
               <div className="ml-4">
-                <p className="text-base font-semibold">Pocket</p>
-                <p className="mt-1 text-sm">Invest at the perfect time.</p>
+                <p className="text-base font-semibold">Efael</p>
+                <p className="mt-1 text-sm">Feel your own ether.</p>
               </div>
             </div>
             <nav className="mt-11 flex gap-8">

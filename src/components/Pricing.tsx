@@ -145,7 +145,7 @@ function Plan({
               className={clsx(
                 'transition duration-300',
                 activePeriod === 'Annually' &&
-                  'pointer-events-none translate-x-6 opacity-0 select-none',
+                'pointer-events-none translate-x-6 opacity-0 select-none',
               )}
             >
               {price.Monthly}
@@ -155,7 +155,7 @@ function Plan({
               className={clsx(
                 'absolute top-0 left-0 transition duration-300',
                 activePeriod === 'Monthly' &&
-                  'pointer-events-none -translate-x-6 opacity-0 select-none',
+                'pointer-events-none -translate-x-6 opacity-0 select-none',
               )}
             >
               {price.Annually}
