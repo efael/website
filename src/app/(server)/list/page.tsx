@@ -1,13 +1,16 @@
 import { type Metadata } from 'next'
-import Link from 'next/link'
-
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
-import { SelectField, TextField } from '@/components/Fields'
+import { SelectField } from '@/components/Fields'
+import { redirect } from 'next/navigation'
+import Link from 'next/link'
+
 
 export const metadata: Metadata = {
   title: 'Sign In',
 }
+
+const servers = ["efael.net", "efael.net", "floss.uz"]
 
 export default function Login() {
   return (
@@ -19,22 +22,13 @@ export default function Login() {
         </>
       }
     >
-      <form>
-        <div className="space-y-6">
-          <SelectField label='Available servers:' >
-            <optgroup label="Global Servers">
-              <option>efael.net</option>
-              <option>floss.uz</option>
-            </optgroup>
-            <optgroup label="Local Servers">
-              <option>efael.uz</option>
-            </optgroup>
-          </SelectField>
-        </div>
-        <Button type="submit" color="gray" className="mt-8 w-full">
-          Let's Go!
-        </Button>
-      </form>
-    </AuthLayout>
+      {servers.map((s) => (
+        <Link href={`https://chat.${s}`}>
+          <Button color="gray" className="mt-2 w-full">
+            {s}
+          </Button>
+        </Link>
+      ))}
+    </AuthLayout >
   )
 }

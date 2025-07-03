@@ -6,7 +6,7 @@ import { Container } from '@/components/Container'
 export function CallToAction() {
   return (
     <section
-      id="get-free-shares-today"
+      id="get-free-apps-today"
       className="relative overflow-hidden bg-gray-900 py-20 sm:py-28"
     >
       <div className="absolute top-1/2 left-20 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2">

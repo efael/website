@@ -44,7 +44,7 @@ export function Footer() {
             </div>
             <div className="ml-8 lg:w-64">
               <p className="text-base font-semibold text-gray-900">
-                <Link href="#">
+                <Link href="#get-free-apps-today">
                   <span className="absolute inset-0 sm:rounded-2xl" />
                   Download the app
                 </Link>
@@ -65,7 +65,7 @@ export function Footer() {
               required
               className="w-60 min-w-0 shrink"
             />
-            <Button type="submit" color="cyan" className="ml-4 flex-none">
+            <Button type="submit" color="gray" className="ml-4 flex-none">
               <span className="hidden lg:inline">Join our newsletter</span>
               <span className="lg:hidden">Join newsletter</span>
             </Button>
