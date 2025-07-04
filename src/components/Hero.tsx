@@ -110,9 +110,9 @@ export function Hero() {
               Experience your own ether.
             </h1>
             <p className="mt-6 text-lg text-gray-600">
-              A privacy-first, decentralized social platform designed to
-              empower communities and protect your data — no ads, no
-              tracking, just secure communication.
+              A privacy-first, decentralized social platform designed to empower
+              communities and protect your data — no ads, no tracking, just
+              secure communication.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-4 gap-y-4">
               <AppStoreLink />
