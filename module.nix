@@ -7,7 +7,7 @@ flake: {
   ...
 }: let
   # Shortcut config
-  cfg = config.services.xinux.website;
+  cfg = config.services.efael.website;
 
   # Packaged server
   server = flake.packages.${pkgs.stdenv.hostPlatform.system}.ssr;
@@ -42,16 +42,16 @@ flake: {
   # The systemd service
   service = lib.mkIf cfg.enable {
     users.users.${cfg.user} = {
-      description = "Xinux Website user";
+      description = "Efael Website user";
       isSystemUser = true;
       group = cfg.group;
     };
 
     users.groups.${cfg.group} = {};
 
-    systemd.services.xinux-www = {
-      description = "Official website of Xinux";
-      documentation = ["https://github.com/xinux-org"];
+    systemd.services.efael-www = {
+      description = "Official website of Efael";
+      documentation = ["https://github.com/efael/website"];
 
       environment = {
         PORT = "${toString cfg.port}";
@@ -115,14 +115,14 @@ flake: {
 
   asserts = lib.mkIf cfg.enable {
     warnings = [
-      (lib.mkIf (cfg.proxy.enable && cfg.proxy.domain == null) "services.xinux.website.proxy.domain must be set in order to properly generate certificate!")
+      (lib.mkIf (cfg.proxy.enable && cfg.proxy.domain == null) "services.efael.website.proxy.domain must be set in order to properly generate certificate!")
     ];
   };
 in {
   options = with lib; {
-    services.xinux.website = {
+    services.efael.website = {
       enable = mkEnableOption ''
-        Xinux'es official website.
+        Efael's official website.
       '';
 
       proxy = {
@@ -133,14 +133,14 @@ in {
         domain = mkOption {
           type = with types; nullOr str;
           default = null;
-          example = "xinux.uz";
+          example = "efael.net";
           description = "Domain to use while adding configurations to web proxy server";
         };
 
         aliases = mkOption {
           type = with types; listOf str;
           default = [];
-          example = ["www.xinux.uz"];
+          example = ["www.efael.uz"];
           description = "List of domain aliases to add to domain";
         };
 
@@ -169,21 +169,21 @@ in {
 
       user = mkOption {
         type = types.str;
-        default = "xinux-www";
+        default = "efael-www";
         description = "User for running system + accessing keys";
       };
 
       group = mkOption {
         type = types.str;
-        default = "xinux-www";
+        default = "efael-www";
         description = "Group for running system + accessing keys";
       };
 
       dataDir = mkOption {
         type = types.str;
-        default = "/var/lib/xinux/www";
+        default = "/var/lib/efael/www";
         description = lib.mdDoc ''
-          The path where Xinux Website server keeps data and possibly logs.
+          The path where Efael Website server keeps data and possibly logs.
         '';
       };
 
@@ -191,7 +191,7 @@ in {
         type = types.package;
         default = server;
         description = ''
-          Packaged xinux.uz website contents for service.
+          Packaged efael.net website contents for service.
         '';
       };
     };
