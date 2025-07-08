@@ -239,7 +239,7 @@ function StocksScreen(props: ScreenProps) {
         <div className="divide-y divide-gray-100">
           {[
             {
-              name: 'Junaid O\'Sullivan',
+              name: "Junaid O'Sullivan",
               message: 'hello',
               time: '12:17',
               change: '+4.98%',
@@ -311,12 +311,8 @@ function StocksScreen(props: ScreenProps) {
                 <stock.logo className="h-10 w-10" />
               </div>
               <div className="flex-auto text-sm">
-                <div className='text-gray-900'>
-                  {stock.name}
-                </div>
-                <div className='text-gray-500'>
-                  {stock.message}
-                </div>
+                <div className="text-gray-900">{stock.name}</div>
+                <div className="text-gray-500">{stock.message}</div>
               </div>
               <div className="flex-none text-right">
                 <div className="text-sm font-medium text-gray-900">
@@ -337,7 +333,7 @@ function StocksScreen(props: ScreenProps) {
           ))}
         </div>
       </MotionAppScreenBody>
-    </AppScreen >
+    </AppScreen>
   )
 }
 
@@ -529,7 +525,9 @@ function FeaturesMobile() {
         {features.map((feature, featureIndex) => (
           <div
             key={featureIndex}
-            ref={(ref) => ref && (slideRefs.current[featureIndex] = ref)}
+            ref={(ref) => {
+              ref && (slideRefs.current[featureIndex] = ref)
+            }}
             className="w-full flex-none snap-center px-4 sm:px-6"
           >
             <div className="relative transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
@@ -590,13 +588,14 @@ export function PrimaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
           <h2 className="text-3xl font-medium tracking-tight text-white">
-            Everything you need for private, sovereign communication. Try it yourself.
+            Everything you need for private, sovereign communication. Try it
+            yourself.
           </h2>
           <p className="mt-2 text-lg text-gray-400">
-            We designed this platform for communities, activists, developers, and
-            independent thinkers — people who don’t want to be tracked, monetized,
-            or censored. If other platforms compromise, we go the other way. If
-            privacy matters, we build it in.
+            We designed this platform for communities, activists, developers,
+            and independent thinkers — people who don’t want to be tracked,
+            monetized, or censored. If other platforms compromise, we go the
+            other way. If privacy matters, we build it in.
           </p>
         </div>
       </Container>
