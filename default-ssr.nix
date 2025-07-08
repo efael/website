@@ -55,23 +55,20 @@ in
       # Create output directory
       mkdir -p $out
 
-      ls -la ./
-      ls -la ./packages/docs
-
       # Copy standalone as library
-      cp -r ./packages/docs/.next/standalone $out/lib
+      cp -r ./.next/standalone $out/lib
 
       # Create filler folders
       mkdir -p $out/lib/.next
 
       # Copy static contents
-      if [ -d "./packages/docs/.next/static" ]; then
-        cp -R ./packages/docs/.next/static $out/lib/.next/static
+      if [ -d "./.next/static" ]; then
+        cp -R ./.next/static $out/lib/.next/static
       fi
 
       # Copy public assets
-      if [ -d "./packages/docs/public" ]; then
-        cp -R ./packages/docs/public $out/lib/public
+      if [ -d "./public" ]; then
+        cp -R ./public $out/lib/public
       fi
 
       # Create executable directory
@@ -85,7 +82,7 @@ in
       pname = manifest.name;
       version = manifest.version;
       src = source;
-      hash = "sha256-QNvNnGO7U1a8n9l0VYAiIgSe6oX3Vdx6F2wwTCSiwT4=";
+      hash = "sha256-Cx1pWrnFA2eqGX82/tUmYFd+6VtNbQLvogg7l1MJ8zU=";
     };
 
     meta = with pkgs.lib; {

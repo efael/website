@@ -37,14 +37,14 @@ in
       # mkdir -p $out
 
       # Move all contents
-      cp -r ./packages/docs/out $out
+      cp -r ./out $out
     '';
 
     pnpmDeps = pkgs.pnpm.fetchDeps {
       pname = manifest.name;
       version = manifest.version;
       src = source;
-      hash = "sha256-QNvNnGO7U1a8n9l0VYAiIgSe6oX3Vdx6F2wwTCSiwT4=";
+      hash = "sha256-Cx1pWrnFA2eqGX82/tUmYFd+6VtNbQLvogg7l1MJ8zU=";
     };
 
     preBuild = ''
