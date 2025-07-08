@@ -39,3 +39,6 @@ next-env.d.ts
 
 # temporary fonts
 # src/app/Inter.ttf
+
+# nix output
+result
