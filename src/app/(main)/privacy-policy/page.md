@@ -12,13 +12,15 @@ At Uzinfocom, we believe secure communication is a fundamental right. This Priva
 ## 2. Scope of This Policy
 
 This policy applies to:
+
 - Our official Matrix homeserver at https://efael.net
--	Our Matrix client apps (web, desktop, mobile) branded as Efael
--	Any related services directly managed by Uzinfocom
+- Our Matrix client apps (web, desktop, mobile) branded as Efael
+- Any related services directly managed by Uzinfocom
 
 This policy does not apply to:
--	Other Matrix homeservers operated by third parties
--	Bridges, identity servers, or services not directly controlled by Uzinfocom
+
+- Other Matrix homeservers operated by third parties
+- Bridges, identity servers, or services not directly controlled by Uzinfocom
 
 ## 3. Who We Are
 
@@ -30,35 +32,40 @@ If you have any questions about this policy, please contact us at:
 ## 4. What Data We Collect
 
 a) Information You Provide
-  -	Username, display name, and avatar
-  -	Password (stored securely using hashing and salting)
-  -	Email address or phone number (optional, used only for account recovery or verification)
+
+- Username, display name, and avatar
+- Password (stored securely using hashing and salting)
+- Email address or phone number (optional, used only for account recovery or verification)
 
 b) Network and Usage Data
-  -	IP address and user agent (temporarily stored for abuse prevention)
-  -	Device/session identifiers
-  -	Room participation metadata (e.g., when you join a room)
+
+- IP address and user agent (temporarily stored for abuse prevention)
+- Device/session identifiers
+- Room participation metadata (e.g., when you join a room)
 
 c) Messages and Content
-  -	All private messages and media are end-to-end encrypted using Matrix’s Olm/Megolm protocols.
-  -	Uzinfocom cannot decrypt or access message contents.
+
+- All private messages and media are end-to-end encrypted using Matrix’s Olm/Megolm protocols.
+- Uzinfocom cannot decrypt or access message contents.
 
 ## 5. Why We Collect This Data
 
 We collect and process data for the following purposes:
--	To operate and maintain your Matrix account
--	To enable secure end-to-end communication
--	To authenticate logins and sessions
--	To monitor platform health, prevent abuse, and detect fraud
--	To provide optional services (like account recovery)
+
+- To operate and maintain your Matrix account
+- To enable secure end-to-end communication
+- To authenticate logins and sessions
+- To monitor platform health, prevent abuse, and detect fraud
+- To provide optional services (like account recovery)
 
 We do not track your activity for marketing or advertising purposes. We do not sell or share your data with third parties.
 
 ## 6. Federation with Other Servers
 
 Matrix is a federated protocol. If you interact with users on other homeservers (outside efael.net):
--	Your Matrix ID (MXID), device keys, and messages may be shared with those servers
--	Uzinfocom cannot control how third-party homeservers process data
+
+- Your Matrix ID (MXID), device keys, and messages may be shared with those servers
+- Uzinfocom cannot control how third-party homeservers process data
 
 We recommend you only federate with trusted Matrix homeservers.
 
@@ -68,17 +75,19 @@ You may choose to connect your account to third-party services (e.g., Telegram, 
 We do not send data to third parties unless you explicitly initiate such integrations.
 
 ## 8. Data Retention
--	Session data and logs are kept for up to 180 days for operational and security purposes
--	Encrypted message history is retained as long as your account exists, unless you delete it
--	You may delete your account at any time, which removes your profile, credentials, and local message history from efael.net
+
+- Session data and logs are kept for up to 180 days for operational and security purposes
+- Encrypted message history is retained as long as your account exists, unless you delete it
+- You may delete your account at any time, which removes your profile, credentials, and local message history from efael.net
 
 ## 9. Security Measures
 
 Uzinfocom implements strong technical and organizational measures to protect your data:
--	All passwords are stored using salted hashing (bcrypt)
--	End-to-end encryption is enabled by default for private rooms
--	Access to infrastructure is restricted to authorized personnel only
--	Servers are monitored and patched regularly
+
+- All passwords are stored using salted hashing (bcrypt)
+- End-to-end encryption is enabled by default for private rooms
+- Access to infrastructure is restricted to authorized personnel only
+- Servers are monitored and patched regularly
 
 ## 10. Children’s Privacy
 
@@ -87,7 +96,8 @@ Efael is not intended for users under 16 without parental consent. We do not kno
 ## 11. Legal Basis and Disclosure
 
 We may process your data based on:
--	Your consent (e.g., for email recovery)
+
+- Your consent (e.g., for email recovery)
 - Contractual necessity (to deliver the service)
 - Legitimate interest (security, performance)
 
@@ -96,11 +106,11 @@ We will only disclose your data if required by law, court order, or to prevent i
 ## 12. Your Rights
 
 As a user, you have the right to:
-	•	Access your data
-	•	Request correction or deletion
-	•	Object to processing in some cases
-	•	Port your data to another Matrix server
-	•	Withdraw consent for optional data uses
+• Access your data
+• Request correction or deletion
+• Object to processing in some cases
+• Port your data to another Matrix server
+• Withdraw consent for optional data uses
 
 To exercise your rights, contact: support@efael.net
 

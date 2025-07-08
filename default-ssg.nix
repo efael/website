@@ -44,7 +44,7 @@ in
       pname = manifest.name;
       version = manifest.version;
       src = source;
-      hash = "sha256-Cx1pWrnFA2eqGX82/tUmYFd+6VtNbQLvogg7l1MJ8zU=";
+      hash = "sha256-SrcPkguR8sSE/cDOk3LAjloDYXiOSXXgWC/8Q4XX7A0=";
     };
 
     preBuild = ''
