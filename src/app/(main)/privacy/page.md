@@ -1,9 +1,9 @@
 # Privacy Policy
 
-**Effective Date:** July 2025
-**Owner:** Uzinfocom
-**Platform:** efael.net
-**Contact:** support@efael.net
+- **Effective Date:** July 2025
+- **Owner:** Uzinfocom
+- **Platform:** efael.net
+- **Contact:** support@efael.net
 
 ## 1. Introduction
 
@@ -106,11 +106,12 @@ We will only disclose your data if required by law, court order, or to prevent i
 ## 12. Your Rights
 
 As a user, you have the right to:
-• Access your data
-• Request correction or deletion
-• Object to processing in some cases
-• Port your data to another Matrix server
-• Withdraw consent for optional data uses
+
+- Access your data
+- Request correction or deletion
+- Object to processing in some cases
+- Port your data to another Matrix server
+- Withdraw consent for optional data uses
 
 To exercise your rights, contact: support@efael.net
 
@@ -120,7 +121,7 @@ We may update this Privacy Policy to reflect changes in the service or legal req
 
 ## 14. Contact Information
 
-Uzinfocom – State Unitary Enterprise
-Address: Republic of Uzbekistan, Tashkent city, Muminov Street 7/1, 100011
-Email: support@efael.net
-Website: https://efael.net
+- Uzinfocom – State Unitary Enterprise
+- Address: Republic of Uzbekistan, Tashkent city, Muminov Street 7/1, 100011
+- Email: support@efael.net
+- Website: https://efael.net

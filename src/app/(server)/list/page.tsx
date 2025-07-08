@@ -8,7 +8,7 @@ import { useId } from 'react'
 
 
 export const metadata: Metadata = {
-  title: 'Sign In',
+  title: 'Servers',
 }
 
 const servers = ["efael.net", "efael.net", "floss.uz"]
