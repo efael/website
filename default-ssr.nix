@@ -44,8 +44,8 @@ in
 
     buildPhase = ''
       # Set to standalone mode and properties
-      sed -i 's/output: "export",/output: "standalone",/' ./next.config.js
-      sed -i 's/unoptimized: true,/unoptimized: false,/' ./next.config.js
+      sed -i "s/output: 'export',/output: 'standalone',/" ./next.config.js
+      sed -i "s/unoptimized: true,/unoptimized: false,/" ./next.config.js
 
       # Build the package
       pnpm build
@@ -54,6 +54,9 @@ in
     installPhase = ''
       # Create output directory
       mkdir -p $out
+
+      cat ./next.config.js
+      ls -la ./.next
 
       # Copy standalone as library
       cp -r ./.next/standalone $out/lib
