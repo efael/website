@@ -1,14 +1,11 @@
-{
-  pkgs ? let
-    lock = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.nixpkgs.locked;
-    nixpkgs = fetchTarball {
-      url = "https://github.com/nixos/nixpkgs/archive/${lock.rev}.tar.gz";
-      sha256 = lock.narHash;
-    };
-  in
-    import nixpkgs {overlays = [];},
-  ...
-}: let
+{pkgs ? let
+  lock = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.nixpkgs.locked;
+  nixpkgs = fetchTarball {
+    url = "https://github.com/nixos/nixpkgs/archive/${lock.rev}.tar.gz";
+    sha256 = lock.narHash;
+  };
+in
+  import nixpkgs {overlays = [];}, ...}: let
   # Manifest data
   manifest = pkgs.lib.importJSON ./package.json;
 
@@ -85,7 +82,7 @@ in
       pname = manifest.name;
       version = manifest.version;
       src = source;
-      hash = "sha256-SrcPkguR8sSE/cDOk3LAjloDYXiOSXXgWC/8Q4XX7A0=";
+      hash = "sha256-WbRdZ/rsBhXyRNI9gMOpdwVMpmlRrulJNqdkKKpqGl8=";
     };
 
     meta = with pkgs.lib; {

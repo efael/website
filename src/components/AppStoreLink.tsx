@@ -8,7 +8,7 @@ export function AppStoreLink({
 }) {
   return (
     <Link
-      href="#"
+      href="https://apps.apple.com/uz/app/efael/id6746404798"
       aria-label="Download on the App Store"
       className={clsx(
         'rounded-lg transition-colors',

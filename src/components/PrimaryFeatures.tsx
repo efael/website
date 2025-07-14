@@ -11,21 +11,22 @@ import {
   motion,
 } from 'framer-motion'
 import { useDebouncedCallback } from 'use-debounce'
+import { FaLock } from '@react-icons/all-files/fa/FaLock'
+import { FaArrowLeft } from '@react-icons/all-files/fa/FaArrowLeft'
+import { FaVideo } from '@react-icons/all-files/fa/FaVideo'
+import { FaBell } from '@react-icons/all-files/fa/FaBell'
+import { FaReply } from '@react-icons/all-files/fa/FaReply'
+import { FaShare } from '@react-icons/all-files/fa/FaShare'
+import { FaLink } from '@react-icons/all-files/fa/FaLink'
+import { FaThumbtack } from '@react-icons/all-files/fa/FaThumbtack'
+import { FaCopy } from '@react-icons/all-files/fa/FaCopy'
+import { FaFileCode } from '@react-icons/all-files/fa/FaFileCode'
 
 import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
-import {
-  DiageoLogo,
-  LaravelLogo,
-  MirageLogo,
-  ReversableLogo,
-  StatamicLogo,
-  StaticKitLogo,
-  TransistorLogo,
-  TupleLogo,
-} from '@/components/StockLogos'
+import { Avatar, ChatMessage } from './ChatMessage'
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -41,21 +42,21 @@ const features = [
     description:
       'Your conversations don’t belong on someone else’s server. With Matrix, your data stays on your terms — self-host, federate, or join trusted instances. No central authority. No vendor lock-in.',
     icon: DeviceUserIcon,
-    screen: InviteScreen,
+    screen: ChatScreen,
   },
   {
     name: 'End-to-End Encryption',
     description:
       'Messages, voice calls, video — all encrypted with the latest protocols like Olm and Megolm. Your communication stays private, whether you’re chatting one-on-one or collaborating in global rooms.',
     icon: DeviceNotificationIcon,
-    screen: StocksScreen,
+    screen: E2EEncryptionScreen,
   },
   {
     name: 'Power Features for Power Users',
     description:
       'Threaded conversations, widgets, bots, VoIP, reactions, and more. Whether you’re running a hacker collective, a DAO, or a gaming guild — you’re covered.',
     icon: DeviceTouchIcon,
-    screen: InvestScreen,
+    screen: PowerFeatures,
   },
 ]
 
@@ -190,35 +191,68 @@ type ScreenProps =
   }
   | { animated?: false }
 
-function InviteScreen(props: ScreenProps) {
+function ChatScreen(props: ScreenProps) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Invite people</AppScreen.Title>
-        <AppScreen.Subtitle>
-          Get tips <span className="text-white">5s sooner</span> for every
-          invite.
-        </AppScreen.Subtitle>
+        <div className="mb-2 text-xl font-bold">Chats</div>
+
+        <div className="flex">
+          <div className="flex flex-1 items-center gap-3">
+            <Avatar text="H" color="amber" size="medium" className="shrink-0" />
+            <div className="flex flex-col justify-center gap-0.5">
+              <div className="text-sm font-bold">Hamjamiyat</div>
+              <div className="text-xs">
+                <strong>Abdusattor</strong>: Ha bugun kechga uchrashamiz
+              </div>
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-col items-end justify-center gap-2">
+            <div className="text-xs">12:12</div>
+            <div className="h-2 w-2 rounded-full bg-green-500" />
+          </div>
+        </div>
       </MotionAppScreenHeader>
       <MotionAppScreenBody
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
       >
-        <div className="px-4 py-6">
-          <div className="space-y-6">
-            {[
-              { label: 'Full name', value: 'Albert H. Wiggin' },
-              { label: 'Email address', value: 'awiggin@chase.com' },
-            ].map((field) => (
-              <div key={field.label}>
-                <div className="text-sm text-gray-500">{field.label}</div>
-                <div className="mt-2 border-b border-gray-200 pb-2 text-sm text-gray-900">
-                  {field.value}
-                </div>
-              </div>
-            ))}
+        <div className="p-4">
+          <div className="flex items-center">
+            <FaArrowLeft className="mr-3" />
+            <Avatar text="H" color="amber" size="small" className="mr-2" />
+            <div className="text-sm">Hamjamiyat</div>
+            <FaVideo className="ml-auto" />
           </div>
-          <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
-            Invite person
+          <div className="mt-3 border-t border-gray-200 pt-5">
+            <ChatMessage
+              user={{ fullName: 'Olimjon', color: 'green' }}
+              message="Hammaga salom!"
+            />
+            <ChatMessage
+              user={{ fullName: 'Olimjon', color: 'green' }}
+              message="Ishlar yaxshimi?"
+              hideUserAvatar
+            />
+            <ChatMessage
+              className="mt-4"
+              user={{ fullName: 'Abdusattor', color: 'red' }}
+              message="Salom qo‘shni"
+            />
+            <ChatMessage
+              user={{ fullName: 'Abdusattor', color: 'red' }}
+              message="Bizda yaxshi, rahmat"
+              hideUserAvatar
+            />
+            <ChatMessage
+              className="mt-4"
+              user={{ fullName: 'Olimjon', color: 'green' }}
+              message="Qachon choy ichamiz?"
+            />
+            <ChatMessage
+              className="mt-4"
+              user={{ fullName: 'Abdusattor', color: 'red' }}
+              message="Ha bugun kechga uchrashamiz"
+            />
           </div>
         </div>
       </MotionAppScreenBody>
@@ -226,165 +260,103 @@ function InviteScreen(props: ScreenProps) {
   )
 }
 
-function StocksScreen(props: ScreenProps) {
+function E2EEncryptionScreen(props: ScreenProps) {
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Stocks</AppScreen.Title>
-        <AppScreen.Subtitle>March 9, 2022</AppScreen.Subtitle>
-      </MotionAppScreenHeader>
       <MotionAppScreenBody
+        className="bg-gray-900 text-white"
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
       >
-        <div className="divide-y divide-gray-100">
-          {[
-            {
-              name: "Junaid O'Sullivan",
-              message: 'hello',
-              time: '12:17',
-              change: '+4.98%',
-              color: '#F9322C',
-              logo: LaravelLogo,
-            },
-            {
-              name: 'Tim Cooked',
-              message: 'hello',
-              time: 'Yesterday',
-              change: '-3.38%',
-              color: '#5A67D8',
-              logo: TupleLogo,
-            },
-            {
-              name: 'Mustafa Solomon',
-              message: 'hello',
-              time: 'Tuesday',
-              change: '+6.25%',
-              color: '#2A5B94',
-              logo: TransistorLogo,
-            },
-            {
-              name: 'Ida Dale',
-              message: 'hello',
-              time: 'Tuesday',
-              change: '+1.25%',
-              color: '#3320A7',
-              logo: DiageoLogo,
-            },
-            {
-              name: 'Briony Luna',
-              message: 'hello',
-              time: 'Tuesday',
-              change: '-3.38%',
-              color: '#2A3034',
-              logo: StaticKitLogo,
-            },
-            {
-              name: 'Tim Ferrell',
-              message: 'hello',
-              time: 'Tuesday',
-              change: '-3.11%',
-              color: '#0EA5E9',
-              logo: StatamicLogo,
-            },
-            {
-              name: 'Jamil Morton',
-              message: 'hello',
-              time: 'Tuesday',
-              change: '+9.09%',
-              color: '#16A34A',
-              logo: MirageLogo,
-            },
-            {
-              name: 'Callum Matthams',
-              message: 'hello',
-              time: 'Tuesday',
-              change: '-1.25%',
-              color: '#8D8D8D',
-              logo: ReversableLogo,
-            },
-          ].map((stock) => (
-            <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
-              <div
-                className="flex-none rounded-full"
-                style={{ backgroundColor: stock.color }}
-              >
-                <stock.logo className="h-10 w-10" />
-              </div>
-              <div className="flex-auto text-sm">
-                <div className="text-gray-900">{stock.name}</div>
-                <div className="text-gray-500">{stock.message}</div>
-              </div>
-              <div className="flex-none text-right">
-                <div className="text-sm font-medium text-gray-900">
-                  {stock.time}
-                </div>
-                <div
-                  className={clsx(
-                    'text-xs/5',
-                    stock.change.startsWith('+')
-                      ? 'text-cyan-500'
-                      : 'text-gray-500',
-                  )}
-                >
-                  {stock.change}
-                </div>
-              </div>
+        <Avatar text="S" color="red" size="large" className="mx-auto" />
+        <div className="mb-6 flex flex-col gap-2 text-center">
+          <div className="text-2xl font-bold">Shaxzod</div>
+          <div className="text-gray-500">@shakhzodkudratov:efael.uz</div>
+          <div className="mx-auto inline-flex items-center gap-1 rounded-xl bg-green-900 px-3 text-sm text-green-200">
+            <FaLock />
+            Encrypted
+          </div>
+        </div>
+
+        <div className="mb-8 flex justify-evenly gap-4 text-2xl">
+          <div className="flex flex-col items-center gap-2">
+            <FaBell />
+            <span className="text-base">Mute</span>
+          </div>
+
+          <div className="flex flex-col items-center gap-2">
+            <FaVideo />
+            <span className="text-base">Call</span>
+          </div>
+        </div>
+
+        <div className="flex gap-2 px-6">
+          <FaLock className="shrink-0 text-xl" />
+          <div>
+            <div>Message encryption enabled</div>
+            <div className="text-sm text-gray-400">
+              Messages are secured with locks. Only you and the recipients have
+              the unique keys to unlock them.
             </div>
-          ))}
+          </div>
         </div>
       </MotionAppScreenBody>
     </AppScreen>
   )
 }
 
-function InvestScreen(props: ScreenProps) {
+function PowerFeatures(props: ScreenProps) {
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Buy $LA</AppScreen.Title>
-        <AppScreen.Subtitle>
-          <span className="text-white">$34.28</span> per share
-        </AppScreen.Subtitle>
-      </MotionAppScreenHeader>
       <MotionAppScreenBody
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
+        className="bg-gray-900 text-white"
       >
-        <div className="px-4 py-6">
-          <div className="space-y-4">
-            {[
-              { label: 'Number of shares', value: '100' },
-              {
-                label: 'Current market price',
-                value: (
-                  <div className="flex">
-                    $34.28
-                    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
-                      <path
-                        d="M17 15V7H9M17 7 7 17"
-                        stroke="#06B6D4"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                ),
-              },
-              { label: 'Estimated cost', value: '$3,428.00' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex justify-between border-b border-gray-100 pb-4"
-              >
-                <div className="text-sm text-gray-500">{item.label}</div>
-                <div className="text-sm font-semibold text-gray-900">
-                  {item.value}
-                </div>
-              </div>
-            ))}
-            <div className="rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
-              Buy shares
+        <div className="flex px-6">
+          <Avatar text="A" color="red" size="medium" className="mr-2" />
+          <div className="flex flex-col">
+            <div className="text-sm">Abdusattor</div>
+            <div className="text-sm text-gray-400">
+              Ha bugun kechga uchrashamiz
             </div>
+          </div>
+        </div>
+
+        <hr className="my-3 text-gray-700" />
+
+        <div className="flex justify-evenly text-2xl">
+          <div>👍</div>
+          <div>👎</div>
+          <div>🎉</div>
+          <div>❤️</div>
+          <div>👌</div>
+        </div>
+
+        <hr className="my-3 text-gray-700" />
+
+        <div className="mt-8 flex flex-col gap-8 px-6 [&>div]:flex [&>div]:items-center [&>div]:gap-2">
+          <div>
+            <FaReply />
+            <span>Reply</span>
+          </div>
+          <div>
+            <FaShare />
+            <span>Forward</span>
+          </div>
+          <div>
+            <FaLink />
+            <span>Copy link to message</span>
+          </div>
+          <div>
+            <FaThumbtack />
+            <span>Pin</span>
+          </div>
+          <div>
+            <FaCopy />
+            <span>Copy text</span>
+          </div>
+          <div>
+            <FaFileCode />
+            <span>View source</span>
           </div>
         </div>
       </MotionAppScreenBody>
