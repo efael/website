@@ -182,7 +182,7 @@ in {
       dataDir = mkOption {
         type = types.str;
         default = "/var/lib/efael/www";
-        description = lib.mdDoc ''
+        description = ''
           The path where Efael Website server keeps data and possibly logs.
         '';
       };
