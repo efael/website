@@ -30,7 +30,7 @@ in {
           description = "Domain to use while adding configurations to web proxy server";
         };
 
-        aliases = mkOption {
+        alias = mkOption {
           type = with types; listOf str;
           default = [];
           example = ["www.efael.uz"];
@@ -183,7 +183,7 @@ in {
       (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "nginx")
       (lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
         "${cfg.proxy.domain}" = {
-          addSSL = true;
+          forceSSL = true;
           enableACME = true;
           serverAliases = cfg.proxy.aliases;
           locations."/" = {
