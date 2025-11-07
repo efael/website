@@ -43,7 +43,7 @@ in {
               "nginx"
               "caddy"
             ]);
-          default = "caddy";
+          default = "nginx";
           description = "Proxy reverse software for hosting website";
         };
       };
@@ -171,7 +171,7 @@ in {
       (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "nginx")
       (lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
         "${cfg.proxy.domain}" = {
-          serverAliases = cfg.proxy.aliases;
+          serverAliases = cfg.proxy.alias;
           extraConfig = ''
             reverse_proxy 127.0.0.1:${toString cfg.port}
           '';
