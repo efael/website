@@ -11,36 +11,90 @@ flake: {
 
   # Packaged server
   server = flake.packages.${pkgs.stdenv.hostPlatform.system}.ssr;
+in {
+  options = with lib; {
+    services.efael.website = {
+      enable = mkEnableOption ''
+        Efael's official website.
+      '';
 
-  # Caddy module lugin
-  caddy = lib.mkIf (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "caddy") {
-    services.caddy.virtualHosts = lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
-      "${cfg.proxy.domain}" = {
-        serverAliases = cfg.proxy.aliases;
-        extraConfig = ''
-          reverse_proxy 127.0.0.1:${toString cfg.port}
+      proxy = {
+        enable = mkEnableOption ''
+          Proxy reversed method of deployment
+        '';
+
+        domain = mkOption {
+          type = with types; nullOr str;
+          default = null;
+          example = "efael.net";
+          description = "Domain to use while adding configurations to web proxy server";
+        };
+
+        aliases = mkOption {
+          type = with types; listOf str;
+          default = [];
+          example = ["www.efael.uz"];
+          description = "List of domain aliases to add to domain";
+        };
+
+        proxy = mkOption {
+          type = with types;
+            nullOr (enum [
+              "nginx"
+              "caddy"
+            ]);
+          default = "caddy";
+          description = "Proxy reverse software for hosting website";
+        };
+      };
+
+      host = mkOption {
+        type = types.str;
+        default = "127.0.0.1";
+        description = "Hostname for nextjs server to bind";
+      };
+
+      port = mkOption {
+        type = types.int;
+        default = 8455;
+        description = "Port to use for passing over proxy";
+      };
+
+      user = mkOption {
+        type = types.str;
+        default = "efael-www";
+        description = "User for running system + accessing keys";
+      };
+
+      group = mkOption {
+        type = types.str;
+        default = "efael-www";
+        description = "Group for running system + accessing keys";
+      };
+
+      dataDir = mkOption {
+        type = types.str;
+        default = "/var/lib/efael-www";
+        description = ''
+          The path where Efael Website server keeps data and possibly logs.
+        '';
+      };
+
+      package = mkOption {
+        type = types.package;
+        default = server;
+        description = ''
+          Packaged efael.net website contents for service.
         '';
       };
     };
   };
 
-  # Nginx module plugin
-  nginx = lib.mkIf (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "nginx") {
-    services.nginx.virtualHosts = lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
-      "${cfg.proxy.domain}" = {
-        addSSL = true;
-        enableACME = true;
-        serverAliases = cfg.proxy.aliases;
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString cfg.port}";
-          proxyWebsockets = true;
-        };
-      };
-    };
-  };
+  config = lib.mkIf cfg.enable {
+    warnings = [
+      (lib.mkIf (cfg.proxy.enable && cfg.proxy.domain == null) "services.efael.website.proxy.domain must be set in order to properly generate certificate!")
+    ];
 
-  # The systemd service
-  service = lib.mkIf cfg.enable {
     users.users.${cfg.user} = {
       description = "Efael Website user";
       isSystemUser = true;
@@ -111,91 +165,32 @@ flake: {
         UMask = "0027";
       };
     };
-  };
 
-  asserts = lib.mkIf cfg.enable {
-    warnings = [
-      (lib.mkIf (cfg.proxy.enable && cfg.proxy.domain == null) "services.efael.website.proxy.domain must be set in order to properly generate certificate!")
-    ];
-  };
-in {
-  options = with lib; {
-    services.efael.website = {
-      enable = mkEnableOption ''
-        Efael's official website.
-      '';
-
-      proxy = {
-        enable = mkEnableOption ''
-          Proxy reversed method of deployment
-        '';
-
-        domain = mkOption {
-          type = with types; nullOr str;
-          default = null;
-          example = "efael.net";
-          description = "Domain to use while adding configurations to web proxy server";
+    services.caddy.virtualHosts =
+      lib.mkIf
+      (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "nginx")
+      (lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
+        "${cfg.proxy.domain}" = {
+          serverAliases = cfg.proxy.aliases;
+          extraConfig = ''
+            reverse_proxy 127.0.0.1:${toString cfg.port}
+          '';
         };
+      });
 
-        aliases = mkOption {
-          type = with types; listOf str;
-          default = [];
-          example = ["www.efael.uz"];
-          description = "List of domain aliases to add to domain";
+    services.nginx.virtualHosts =
+      lib.mkIf
+      (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "nginx")
+      (lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
+        "${cfg.proxy.domain}" = {
+          addSSL = true;
+          enableACME = true;
+          serverAliases = cfg.proxy.aliases;
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:${toString cfg.port}";
+            proxyWebsockets = true;
+          };
         };
-
-        proxy = mkOption {
-          type = with types;
-            nullOr (enum [
-              "nginx"
-              "caddy"
-            ]);
-          default = "caddy";
-          description = "Proxy reverse software for hosting website";
-        };
-      };
-
-      host = mkOption {
-        type = types.str;
-        default = "127.0.0.1";
-        description = "Hostname for nextjs server to bind";
-      };
-
-      port = mkOption {
-        type = types.int;
-        default = 8455;
-        description = "Port to use for passing over proxy";
-      };
-
-      user = mkOption {
-        type = types.str;
-        default = "efael-www";
-        description = "User for running system + accessing keys";
-      };
-
-      group = mkOption {
-        type = types.str;
-        default = "efael-www";
-        description = "Group for running system + accessing keys";
-      };
-
-      dataDir = mkOption {
-        type = types.str;
-        default = "/var/lib/efael/www";
-        description = ''
-          The path where Efael Website server keeps data and possibly logs.
-        '';
-      };
-
-      package = mkOption {
-        type = types.package;
-        default = server;
-        description = ''
-          Packaged efael.net website contents for service.
-        '';
-      };
-    };
+      });
   };
-
-  config = lib.mkMerge [asserts service caddy nginx];
 }
