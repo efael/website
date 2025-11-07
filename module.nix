@@ -185,7 +185,7 @@ in {
         "${cfg.proxy.domain}" = {
           forceSSL = true;
           enableACME = true;
-          serverAliases = cfg.proxy.aliases;
+          serverAliases = cfg.proxy.alias;
           locations."/" = {
             proxyPass = "http://127.0.0.1:${toString cfg.port}";
             proxyWebsockets = true;
