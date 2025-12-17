@@ -22,7 +22,7 @@ const faqs = [
     {
       question: 'Can I host my own server?',
       answer:
-        'Yes — that’s one of the core strengths of Matrix. You can deploy your own homeserver using Synapse or Dendrite easily with Efael\'s provided infrastructure via NixOS, and manage your own identity server if desired.',
+        'Yes — that’s one of the core strengths of Matrix. You can deploy your own homeserver using Synapse or Dendrite easily with Uchar\'s provided infrastructure via NixOS, and manage your own identity server if desired.',
     },
     {
       question: 'Can I use it with other platforms?',
@@ -72,7 +72,7 @@ export function Faqs() {
           <p className="mt-2 text-lg text-gray-600">
             If you have anything else you want to ask,{' '}
             <a
-              href="mailto:support@efael.net"
+              href="mailto:support@uchar.uz"
               className="text-gray-900 underline"
             >
               reach out to us

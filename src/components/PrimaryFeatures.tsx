@@ -270,7 +270,7 @@ function E2EEncryptionScreen(props: ScreenProps) {
         <Avatar text="S" color="red" size="large" className="mx-auto" />
         <div className="mb-6 flex flex-col gap-2 text-center">
           <div className="text-2xl font-bold">Shaxzod</div>
-          <div className="text-gray-500">@shakhzodkudratov:efael.uz</div>
+          <div className="text-gray-500">@shakhzodkudratov:uchar.uz</div>
           <div className="mx-auto inline-flex items-center gap-1 rounded-xl bg-green-900 px-3 text-sm text-green-200">
             <FaLock />
             Encrypted

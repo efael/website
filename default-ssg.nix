@@ -54,9 +54,9 @@ in
     '';
 
     meta = with pkgs.lib; {
-      homepage = "https://efael.net";
+      homepage = "https://uchar.uz";
       mainProgram = "${manifest.name}-start";
-      description = "Website of Efael";
+      description = "Website of Uchar";
       license = with licenses; [cc-by-40];
       platforms = with platforms; linux ++ darwin;
       maintainers = with maintainers; [orzklv];

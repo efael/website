@@ -16,7 +16,7 @@ export function Footer() {
             <div className="flex items-center text-gray-900">
               <Logomark className="h-10 w-10 flex-none fill-gray-900" />
               <div className="ml-4">
-                <p className="text-base font-semibold">Efael</p>
+                <p className="text-base font-semibold">Uchar</p>
                 <p className="mt-1 text-sm">Feel your own ether.</p>
               </div>
             </div>

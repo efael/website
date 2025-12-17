@@ -2,19 +2,19 @@
 
 - **Effective Date:** July 2025
 - **Owner:** Uzinfocom
-- **Platform:** efael.net
-- **Contact:** support@efael.net
+- **Platform:** uchar.uz
+- **Contact:** support@uchar.uz
 
 ## 1. Introduction
 
-At Uzinfocom, we believe secure communication is a fundamental right. This Privacy Policy explains what data we collect when you use Efael, a decentralized messaging platform built on the Matrix protocol, and how we protect and use that data. We do not sell your information or use it for advertising.
+At Uzinfocom, we believe secure communication is a fundamental right. This Privacy Policy explains what data we collect when you use Uchar, a decentralized messaging platform built on the Matrix protocol, and how we protect and use that data. We do not sell your information or use it for advertising.
 
 ## 2. Scope of This Policy
 
 This policy applies to:
 
-- Our official Matrix homeserver at https://efael.net
-- Our Matrix client apps (web, desktop, mobile) branded as Efael
+- Our official Matrix homeserver at https://uchar.uz
+- Our Matrix client apps (web, desktop, mobile) branded as Uchar
 - Any related services directly managed by Uzinfocom
 
 This policy does not apply to:
@@ -24,10 +24,10 @@ This policy does not apply to:
 
 ## 3. Who We Are
 
-Uzinfocom, a state-owned IT infrastructure provider in the Republic of Uzbekistan, is the data controller for services provided through efael.net.
+Uzinfocom, a state-owned IT infrastructure provider in the Republic of Uzbekistan, is the data controller for services provided through uchar.uz.
 
 If you have any questions about this policy, please contact us at:
-📧 support@efael.net
+📧 support@uchar.uz
 
 ## 4. What Data We Collect
 
@@ -62,7 +62,7 @@ We do not track your activity for marketing or advertising purposes. We do not s
 
 ## 6. Federation with Other Servers
 
-Matrix is a federated protocol. If you interact with users on other homeservers (outside efael.net):
+Matrix is a federated protocol. If you interact with users on other homeservers (outside uchar.uz):
 
 - Your Matrix ID (MXID), device keys, and messages may be shared with those servers
 - Uzinfocom cannot control how third-party homeservers process data
@@ -78,7 +78,7 @@ We do not send data to third parties unless you explicitly initiate such integra
 
 - Session data and logs are kept for up to 180 days for operational and security purposes
 - Encrypted message history is retained as long as your account exists, unless you delete it
-- You may delete your account at any time, which removes your profile, credentials, and local message history from efael.net
+- You may delete your account at any time, which removes your profile, credentials, and local message history from uchar.uz
 
 ## 9. Security Measures
 
@@ -91,7 +91,7 @@ Uzinfocom implements strong technical and organizational measures to protect you
 
 ## 10. Children’s Privacy
 
-Efael is not intended for users under 16 without parental consent. We do not knowingly collect personal data from children.
+Uchar is not intended for users under 16 without parental consent. We do not knowingly collect personal data from children.
 
 ## 11. Legal Basis and Disclosure
 
@@ -113,15 +113,15 @@ As a user, you have the right to:
 - Port your data to another Matrix server
 - Withdraw consent for optional data uses
 
-To exercise your rights, contact: support@efael.net
+To exercise your rights, contact: support@uchar.uz
 
 ## 13. Policy Updates
 
-We may update this Privacy Policy to reflect changes in the service or legal requirements. Material changes will be communicated via the app or website. Continued use of Efael implies agreement to the updated policy.
+We may update this Privacy Policy to reflect changes in the service or legal requirements. Material changes will be communicated via the app or website. Continued use of Uchar implies agreement to the updated policy.
 
 ## 14. Contact Information
 
 - Uzinfocom – State Unitary Enterprise
 - Address: Republic of Uzbekistan, Tashkent city, Muminov Street 7/1, 100011
-- Email: support@efael.net
-- Website: https://efael.net
+- Email: support@uchar.uz
+- Website: https://uchar.uz

@@ -7,15 +7,15 @@ flake: {
   ...
 }: let
   # Shortcut config
-  cfg = config.services.efael.website;
+  cfg = config.services.uchar.website;
 
   # Packaged server
   server = flake.packages.${pkgs.stdenv.hostPlatform.system}.ssr;
 in {
   options = with lib; {
-    services.efael.website = {
+    services.uchar.website = {
       enable = mkEnableOption ''
-        Efael's official website.
+        Uchar's official website.
       '';
 
       proxy = {
@@ -26,14 +26,14 @@ in {
         domain = mkOption {
           type = with types; nullOr str;
           default = null;
-          example = "efael.net";
+          example = "uchar.uz";
           description = "Domain to use while adding configurations to web proxy server";
         };
 
         alias = mkOption {
           type = with types; listOf str;
           default = [];
-          example = ["www.efael.uz"];
+          example = ["www.uchar.uz"];
           description = "List of domain aliases to add to domain";
         };
 
@@ -62,21 +62,21 @@ in {
 
       user = mkOption {
         type = types.str;
-        default = "efael-www";
+        default = "uchar-www";
         description = "User for running system + accessing keys";
       };
 
       group = mkOption {
         type = types.str;
-        default = "efael-www";
+        default = "uchar-www";
         description = "Group for running system + accessing keys";
       };
 
       dataDir = mkOption {
         type = types.str;
-        default = "/var/lib/efael-www";
+        default = "/var/lib/uchar-www";
         description = ''
-          The path where Efael Website server keeps data and possibly logs.
+          The path where Uchar Website server keeps data and possibly logs.
         '';
       };
 
@@ -84,7 +84,7 @@ in {
         type = types.package;
         default = server;
         description = ''
-          Packaged efael.net website contents for service.
+          Packaged uchar.uz website contents for service.
         '';
       };
     };
@@ -92,20 +92,20 @@ in {
 
   config = lib.mkIf cfg.enable {
     warnings = [
-      (lib.mkIf (cfg.proxy.enable && cfg.proxy.domain == null) "services.efael.website.proxy.domain must be set in order to properly generate certificate!")
+      (lib.mkIf (cfg.proxy.enable && cfg.proxy.domain == null) "services.uchar.website.proxy.domain must be set in order to properly generate certificate!")
     ];
 
     users.users.${cfg.user} = {
-      description = "Efael Website user";
+      description = "Uchar Website user";
       isSystemUser = true;
       group = cfg.group;
     };
 
     users.groups.${cfg.group} = {};
 
-    systemd.services.efael-www = {
-      description = "Official website of Efael";
-      documentation = ["https://github.com/efael/website"];
+    systemd.services.uchar-www = {
+      description = "Official website of Uchar";
+      documentation = ["https://github.com/uchar/website"];
 
       environment = {
         PORT = "${toString cfg.port}";

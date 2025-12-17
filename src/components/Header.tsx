@@ -132,7 +132,7 @@ export function Header() {
               )}
             </Popover>
             <div className="flex items-center gap-6 max-lg:hidden">
-              <Button href="https://chat.efael.uz" variant="outline">
+              <Button href="https://chat.uchar.uz" variant="outline">
                 Sign in
               </Button>
               {/* <Button href="#">Download</Button> */}

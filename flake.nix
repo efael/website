@@ -1,5 +1,5 @@
 {
-  description = "Official website of Efael Messenger";
+  description = "Official website of Uchar Messenger";
 
   inputs = {
     # Too old to work with most libraries
